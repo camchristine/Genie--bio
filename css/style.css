@@ -381,26 +381,6 @@
 }
 
 
-/*** Store ***/
-.store-item .store-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: rgba(138, 180, 78, .3);
-    opacity: 0;
-    transition: .5s;
-}
-
-.store-item:hover .store-overlay {
-    opacity: 1;
-}
-
 
 /*** Contact ***/
 .contact .btn-square {
@@ -498,3 +478,4 @@
 .copyright a:hover {
     color: #FFFFFF !important;
 }
+
