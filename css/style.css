@@ -479,3 +479,18 @@
     color: #FFFFFF !important;
 }
 
+
+.move-and-enlarge {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10%;
+    margin-top: 300px;
+    margin-right: -500px; 
+    transform: scale(2.2); 
+    transition: transform 0.3s ease; 
+  }
+  
+  .move-and-enlarge:hover {
+    transform: scale(1.3); 
+  }
+  
