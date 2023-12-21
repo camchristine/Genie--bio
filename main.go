@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"net/http"
+	"os"
 )
 
 func main() {
@@ -10,8 +12,9 @@ func main() {
 	http.HandleFunc("/", handler)
 
 	// Démarre le serveur sur le port 8080
-	port := 8080
+	port := 8000
 	fmt.Printf("Serveur en cours d'exécution sur le port %d...\n", port)
+	fmt.Println("http://localhost:8000")
 	err := http.ListenAndServe(fmt.Sprintf(":%d", port), nil)
 	if err != nil {
 		fmt.Println("Erreur :", err)
@@ -48,9 +51,21 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 // Fonction pour lire le contenu d'un fichier
 func readFile(filename string) ([]byte, error) {
-	// Remplacez cette logique par la lecture réelle de vos fichiers depuis le système de fichiers
-	// Actuellement, elle renvoie simplement un message indiquant le nom du fichier
-	return []byte(fmt.Sprintf("Contenu du fichier : %s", filename)), nil
+	// Chemin complet vers le fichier
+	path := fmt.Sprintf("./%s", filename)
+
+	// Vérifier si le fichier existe
+	if _, err := os.Stat(path); os.IsNotExist(err) {
+		return nil, fmt.Errorf("le fichier %s n'existe pas", filename)
+	}
+
+	// Lire le contenu du fichier
+	content, err := ioutil.ReadFile(path)
+	if err != nil {
+		return nil, err
+	}
+
+	return content, nil
 }
 
 // Fonction pour obtenir le type de contenu en fonction de l'extension du fichier
