@@ -154,16 +154,7 @@
 
 
 /*** Header ***/
-.carousel-caption {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    background: rgba(136, 180, 78, .7);
-    z-index: 1;
-}
+
 
 .carousel-control-prev,
 .carousel-control-next {
@@ -481,16 +472,109 @@
 
 
 .move-and-enlarge {
-    max-width: 100%;
+    max-width: 60%;
     height: auto;
     border-radius: 10%;
-    margin-top: 300px;
-    margin-right: -500px; 
-    transform: scale(2.2); 
+    margin-top: 400px;
+    margin-right: -400px; 
+    transform: scale(3.2); 
     transition: transform 0.3s ease; 
   }
   
   .move-and-enlarge:hover {
-    transform: scale(1.3); 
+    transform: scale(4.3); 
   }
   
+/* Common styles for all screen sizes */
+.carousel-caption {
+    margin-top: 600px;
+    text-align: center;
+    color: white;
+}
+
+.join-community-btn {
+    margin-left: 40%;
+    background-color: #04235C;
+    color: aliceblue;
+    padding: 1%;
+}
+
+/* Media query for screens smaller than 768px (tablets and phones) */
+@media (max-width: 767px) {
+    .carousel-caption {
+        margin-top: -300px; /* Adjust as needed */
+    }
+    
+    .join-community-btn {
+        margin-left: 10%; /* Adjust as needed */
+    }
+}
+
+/* Media query for screens between 768px and 991px (medium-sized devices) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .carousel-caption {
+        margin-top: -450px; /* Adjust as needed */
+    }
+    
+    .join-community-btn {
+        margin-left: 20%; /* Adjust as needed */
+    }
+}
+
+/* Add more media queries as needed for other screen sizes */
+
+/* Common styles for all screen sizes */
+.btn-learn-more {
+    margin-right: 40%;
+    background-color: #04235C;
+    color: aliceblue;
+    padding: 3%;
+}
+
+/* Default styles for all screens */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styles for larger screens */
+@media (min-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    /* Add more styles for larger screens as needed */
+}
+
+/* Styles for tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    /* Adjust specific styles for tablets */
+}
+
+/* Styles for smaller screens (e.g., smartphones) */
+@media (max-width: 767px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    /* Adjust specific styles for smaller screens */
+}
+
+
